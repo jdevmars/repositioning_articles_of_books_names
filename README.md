@@ -57,4 +57,4 @@ SQL scripts fetch the data to HTML creatives, C# code organizes the books' names
 
 It took me a while to prepare all this and consider all possible options to be amended, considering those 3 languages only.
 
-The tests succeeded, the client started using my C#/SQL/DC code, and success was achieved, with the C# code being possible to use anytime for new messages in the future.
+The tests succeeded, the client started using my C#/SQL/DC code with their HTML, and success was achieved, with the C# code being possible to use anytime for new messages in the future.
