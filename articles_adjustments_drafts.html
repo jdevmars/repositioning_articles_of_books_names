@@ -1,0 +1,182 @@
+<var rows="GetRowsByTemplate('getSixOfTheFixtyMostSoldBooksRandomly')"/>
+<if condition="rows.Count > 0">
+  <%
+   // string content = (string)rows[0]['ProductName'];
+   // int tamanho = rows.Count;
+   
+   string[] books = new string[6];
+   string book_0 = "";
+   string book_1;
+   string book_2;
+   string book_3;
+   string book_4;
+   string book_5;
+     
+   bool contain;
+     
+   /*
+   for(int i = 0; i < tamanho; i++){
+     books[i] = (string)rows[i]['ProductName'];
+   } 
+   */
+  
+   /*
+   int i = 0;
+   while (i < tamanho) {
+     books[i] = (string)rows[i]['ProductName'];
+     i++;
+   }
+   */
+                      
+    // books[0] = (string)rows[0]['ProductName'];
+    
+    
+    for(int i = 0; i < 6; i++){
+        books[i] = (string)rows[i]['ProductName'];
+    }
+  
+    string verify = (string)rows[0]['ProductName'];
+    if((!verify.Contains(", Os") && !verify.Contains(", As")) && verify.Contains(", O") || verify.Contains(", A")) {
+       contain = true;
+  	     string lastChars = verify.Substring(verify.Length -1);
+							       string remainingString = verify.Substring(0, verify.Length -3);
+				       	books[0] = lastChars + " " + remainingString;
+    }
+    else
+       contain = false;
+    
+                      
+     
+   %>
+   
+  ${book_0} <br>
+  ${books[0]} <br>
+  ${books[1]} <br>
+  ${books[2]} <br>
+  ${books[3]} <br>
+  ${books[4]} <br>
+  ${books[5]} <br>
+  ${contain} <br>
+  <!-- ${content} <br> -->
+  <!-- ${tamanho} -->
+</if>
+
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+
+<var rows="GetRowsByTemplate('getSixOfTheFixtyMostSoldBooksRandomly')"/>
+<if condition="rows.Count > 0">
+  <%
+     
+     string[] books = new string[6];
+     
+     string verify = "";
+     for(int i = 0; i < 6; i++) {
+    verify = (string)rows[i]['ProductName'];
+    if(!verify.Contains(",os") && !verify.Contains(",Os") && (verify.Contains(",o") || verify.Contains(",O"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -2);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",as") && !verify.Contains(",As") && !verify.Contains(",an") && !verify.Contains(",An") &&                 (verify.Contains(",a") || verify.Contains(",A"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -2);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",os") || verify.Contains(",Os")) { 
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",as") || verify.Contains(",As")) { 
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", os") && !verify.Contains(", Os") && (verify.Contains(", o") || verify.Contains(", O"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", as") && !verify.Contains(", As") && !verify.Contains(", an") && !verify.Contains(", An") && (verify.Contains(", a") || verify.Contains(", A"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", os") || verify.Contains(", Os")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", as") || verify.Contains(", As")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",el") || verify.Contains(",El")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",las") && !verify.Contains(",Las") && (verify.Contains(",la") || verify.Contains(",La"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",los") || verify.Contains(",Los")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",las") || verify.Contains(",Las")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", el") || verify.Contains(", El")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", las") && !verify.Contains(", Las") && (verify.Contains(", la") || verify.Contains(", La"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", los") || verify.Contains(", Los")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", las") || verify.Contains(", Las")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",los") && !verify.Contains(",Los") && (verify.Contains(",lo") || verify.Contains(",Lo"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",los") || verify.Contains(",Los")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",the") || verify.Contains(",The")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", the") || verify.Contains(", The")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",an") || verify.Contains(",An")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", an") || verify.Contains(", An")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    }
+    
+    
+    
+    else
+      books[i] = (string)rows[i]['ProductName'];
+}
+    
+     
+   %>
+  
+  ${books[0]} <br>
+  ${books[1]} <br>
+  ${books[2]} <br>
+  ${books[3]} <br>
+  ${books[4]} <br>
+  ${books[5]} <br>
+</if>

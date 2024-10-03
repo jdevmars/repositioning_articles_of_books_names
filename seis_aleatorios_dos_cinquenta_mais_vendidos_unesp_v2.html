@@ -1,0 +1,161 @@
+<var rows="GetRowsByTemplate('getSixOfTheFixtyMostSoldBooksRandomly')"/>
+<if condition="rows.Count > 0">
+  <%
+     
+     string[] books = new string[6];
+     
+     string verify = "";
+     for(int i = 0; i < 6; i++) {
+    verify = (string)rows[i]['ProductName'];
+    if(!verify.Contains(",os") && !verify.Contains(",Os") && (verify.Contains(",o") || verify.Contains(",O"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -2);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",as") && !verify.Contains(",As") && !verify.Contains(",an") && !verify.Contains(",An") && (verify.Contains(",a") || verify.Contains(",A"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -2);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",os") || verify.Contains(",Os")) { 
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",as") || verify.Contains(",As")) { 
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", os") && !verify.Contains(", Os") && (verify.Contains(", o") || verify.Contains(", O"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", as") && !verify.Contains(", As") && !verify.Contains(", an") && !verify.Contains(", An") && (verify.Contains(", a") || verify.Contains(", A"))) {
+        string lastChars = verify.Substring(verify.Length -1);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", os") || verify.Contains(", Os")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", as") || verify.Contains(", As")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",el") || verify.Contains(",El")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",las") && !verify.Contains(",Las") && (verify.Contains(",la") || verify.Contains(",La"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",los") || verify.Contains(",Los")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",las") || verify.Contains(",Las")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", el") || verify.Contains(", El")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(", las") && !verify.Contains(", Las") && (verify.Contains(", la") || verify.Contains(", La"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", los") || verify.Contains(", Los")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", las") || verify.Contains(", Las")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (!verify.Contains(",los") && !verify.Contains(",Los") && (verify.Contains(",lo") || verify.Contains(",Lo"))) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",los") || verify.Contains(",Los")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",the") || verify.Contains(",The")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", the") || verify.Contains(", The")) {
+        string lastChars = verify.Substring(verify.Length -3);
+        string remainingString = verify.Substring(0, verify.Length -5);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(",an") || verify.Contains(",An")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -3);
+        books[i] = lastChars + " " + remainingString;
+    } else if (verify.Contains(", an") || verify.Contains(", An")) {
+        string lastChars = verify.Substring(verify.Length -2);
+        string remainingString = verify.Substring(0, verify.Length -4);
+        books[i] = lastChars + " " + remainingString;
+    }
+    else
+      books[i] = (string)rows[i]['ProductName'];
+}
+         
+   %>
+<center>
+<h3>6 aleatórios dos 50 mais vendidos</h3>
+
+<table bgcolor="#c1c3c3">
+<tr>
+  <td>
+   <table cellspacing="0" cellpadding="0" width="650px">
+	<tbody>
+	 <tr> <!-- primeira linha & primeira coluna -->
+	  <td> <!-- primeira linha & primeira coluna -->
+		 <table cellspacing="0" cellpadding="0" width="650px" border="0" bgcolor="#dffaf9">
+			<tbody>
+				<tr>
+					<td style="padding:2px; text-align:center;"><b>${books[0]}</b></td>
+					<td style="padding:2px; text-align:center;"><b>${books[1]}</b></td>
+					<td style="padding:2px; text-align:center;"><b>${books[2]}</b></td>
+				</tr>
+				<tr>
+					<td style="padding:2px; text-align:center;"><a href="${rows[0]['URL']}" target="_blank"><img src="${rows[0]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+					<td style="padding:2px; text-align:center;"><a href="${rows[1]['URL']}" target="_blank"><img src="${rows[1]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+					<td style="padding:2px; text-align:center;"><a href="${rows[2]['URL']}" target="_blank"><img src="${rows[2]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+				</tr>
+				<tr>
+					<td style="padding:2px; text-align:center;"><if condition="rows[0]['Mostra'] == 'true'"><s>De: ${rows[0]['ListPrice']}</s> => Por: ${rows[0]['Price']} </if><else>${rows[0]['Price']}</else></td>
+					<td style="padding:2px; text-align:center;"><if condition="rows[1]['Mostra'] == 'true'"><s>De: ${rows[1]['ListPrice']}</s> => Por: ${rows[1]['Price']} </if><else>${rows[1]['Price']}</else></td>
+					<td style="padding:2px; text-align:center;"><if condition="rows[2]['Mostra'] == 'true'"><s>De: ${rows[2]['ListPrice']}</s> => Por: ${rows[2]['Price']} </if><else>${rows[2]['Price']}</else></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="padding:2px; text-align:center;"><b>${books[3]}</b></td>
+					<td style="padding:2px; text-align:center;"><b>${books[4]}</b></td>
+					<td style="padding:2px; text-align:center;"><b>${books[5]}</b></td>
+				</tr>
+				<tr>
+					<td style="padding:2px; text-align:center;"><a href="${rows[3]['URL']}" target="_blank"><img src="${rows[3]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+					<td style="padding:2px; text-align:center;"><a href="${rows[4]['URL']}" target="_blank"><img src="${rows[4]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+					<td style="padding:2px; text-align:center;"><a href="${rows[5]['URL']}" target="_blank"><img src="${rows[5]['ImageUrlBig']}" style="display: block; border: 0" width="220px" height="220px"></a></td>
+				</tr>
+				<tr>
+					<td style="padding:2px; text-align:center;"><if condition="rows[3]['Mostra'] == 'true'"><s>De: ${rows[3]['ListPrice']}</s> => Por: ${rows[3]['Price']} </if><else>${rows[3]['Price']}</else></td>
+					<td style="padding:2px; text-align:center;"><if condition="rows[4]['Mostra'] == 'true'"><s>De: ${rows[4]['ListPrice']}</s> => Por: ${rows[4]['Price']} </if><else>${rows[4]['Price']}</else></td>
+					<td style="padding:2px; text-align:center;"><if condition="rows[5]['Mostra'] == 'true'"><s>De: ${rows[5]['ListPrice']}</s> => Por: ${rows[5]['Price']} </if><else>${rows[5]['Price']}</else></td>
+				</tr>
+			</tbody>
+		 </table>
+	  </td>
+	 </tr>
+	</tbody>
+   </table>
+ </td>
+</tr>
+</table>
+</center>
+</if>
