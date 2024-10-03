@@ -2,6 +2,8 @@
 
  The Vtex data tables of the client Unesp present nomes of books like this:
 
+ Portuguese:
+
 "objetivo é estudar,o",
 "mal hábito dos brasileiros,O",
 "abstração da realidade,a",
@@ -18,6 +20,8 @@
 "caso de dengue no Brasil, Os",
 "lindas perobas flamejantes, as",
 "maravilhas do universo, As",
+
+Spanish:
 
 "grandioso poder oculto,el",
 "terror de la playa,El",
@@ -39,6 +43,8 @@
 "poderoso que puedes ser,Lo",
 "bueno de salirse con la suya, lo",
 "intenso que puede ser el amor, Lo",
+
+ English:
 
 "end!,the",
 "next!,The",
